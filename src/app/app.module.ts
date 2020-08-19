@@ -8,11 +8,15 @@ import { InventoryDetailsComponent } from './Inventory/inventory-details/invento
 import {InventoryMaterialModule} from './Inventory/material-module';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { CustomerMaterialDetailsComponent } from './customer/customer-material-details/customer-material-details.component';
+import { BillingDetailsComponent } from './bill/billing-details/billing-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     InventoryDetailsComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    CustomerMaterialDetailsComponent,
+    BillingDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,77 @@
+<p>Bill!</p>
+<div style="padding: 0 0 20px ;background: chocolate;">
+  
+    <h3>Value string</h3>
+    
+    <mat-form-field>
+      <mat-select name="countryString" [(value)]="selectedPencil" placeholder="Pencil">
+        <mat-option [value]="'1000'">1000</mat-option>
+        <mat-option [value]="'2000'">2000</mat-option>
+        <mat-option [value]="'3000'">3000</mat-option>
+        <mat-option [value]="'4000'">4000</mat-option>
+        <mat-option [value]="'5000'">5000</mat-option>
+        <mat-option [value]="'6000'">6000</mat-option>
+        <mat-option [value]="'7000'">7000</mat-option>
+        <mat-option [value]="'8000'">8000</mat-option>
+        <mat-option [value]="'9000'">9000</mat-option>
+        <mat-option [value]="'10000'">10000</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    &nbsp;&nbsp;
+    Selected = {{selectedPencil}} Pencil
+    <mat-form-field>
+      <mat-select name="countryString" [(value)]="selectedGum" placeholder="Gum">
+        <mat-option [value]="'1'">1</mat-option>
+        <mat-option [value]="'2'">2</mat-option>
+        <mat-option [value]="'3'">3</mat-option>
+        <mat-option [value]="'4'">4</mat-option>
+        <mat-option [value]="'5'">5</mat-option>
+        <mat-option [value]="'6'">6</mat-option>
+        <mat-option [value]="'7'">7</mat-option>
+        <mat-option [value]="'8'">8</mat-option>
+        <mat-option [value]="'9'">9</mat-option>
+        <mat-option [value]="'10'">10</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    &nbsp;&nbsp;
+    Selected = {{selectedGum}} Gum KG
+    <mat-form-field>
+      <mat-select name="countryString" [(value)]="selectedColor" placeholder="Color">
+        <mat-option [value]="'1'">1</mat-option>
+        <mat-option [value]="'2'">2</mat-option>
+        <mat-option [value]="'3'">3</mat-option>
+        <mat-option [value]="'4'">4</mat-option>
+        <mat-option [value]="'5'">5</mat-option>
+        <mat-option [value]="'6'">6</mat-option>
+        <mat-option [value]="'7'">7</mat-option>
+        <mat-option [value]="'8'">8</mat-option>
+        <mat-option [value]="'9'">9</mat-option>
+        <mat-option [value]="'10'">10</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+
+
+    &nbsp;&nbsp;
+    Selected = {{selectedColor}} Color KG
+    <mat-form-field>
+      <mat-select name="countryString" [(value)]="selectedStand" placeholder="Stand">
+        <mat-option [value]="'0'">0</mat-option>
+        <mat-option [value]="'50'">50</mat-option>
+        <mat-option [value]="'100'">100</mat-option>
+        <mat-option [value]="'200'">200</mat-option>
+        <mat-option [value]="'300'">300</mat-option>
+      
+      </mat-select>
+    </mat-form-field>
+    
+   
+
+    &nbsp;&nbsp;
+    Selected = {{selectedStand}} Stand
+    
+  </div>
+
+  <button (click)="saveData()">Do Billing</button>

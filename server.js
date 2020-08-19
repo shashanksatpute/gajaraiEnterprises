@@ -4,6 +4,9 @@ const path = require('path');
 
 const app = express();
 var usersRouter = require('./routes/users');
+var customerRouter = require('./routes/customer');
+
+var customerDetailsRouter = require('./routes/customerMaterialDetails');
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/gajarai-enterprises-project'));
 app.use(function(req, res, next) {
@@ -14,6 +17,9 @@ app.use(function(req, res, next) {
 
   
 app.use('/rawMaterial', usersRouter);
+app.use('/customerData', customerRouter);
+
+//app.use('/customerData/:id', customerDetailsRouter);
 
 app.get('/*', function(req,res) {
     

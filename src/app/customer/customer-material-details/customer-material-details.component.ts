@@ -1,28 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
+import { ActivatedRoute } from "@angular/router";
 export interface PeriodicElement {
-  name: string;
-  mobno: string;
-  machine: string;
+  pencil: string;
+  color: string;
+  gum: string;
+  stand: string;
   _id:string;
-  customer_id:string
+  date:string
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
 
  ];
 @Component({
-  selector: 'app-customer-details',
-  templateUrl: './customer-details.component.html',
-  styleUrls: ['./customer-details.component.css']
+  selector: 'app-customer-material-details',
+  templateUrl: './customer-material-details.component.html',
+  styleUrls: ['./customer-material-details.component.css']
 })
-export class CustomerDetailsComponent implements OnInit {
-  constructor(private httpClient: HttpClient) { }
-  displayedColumns: string[] = ['customer_id','name', 'mobno', 'machine','actions'];
+export class CustomerMaterialDetailsComponent implements OnInit {
+
+  constructor(private httpClient: HttpClient,private route: ActivatedRoute) { }
+  displayedColumns: string[] = ['pencil', 'color', 'gum', 'stand',"date"];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  customer_Id="";
   ngOnInit(): void {
-    var url=window.location.origin+"/customerData";
+    var id=this.route.snapshot.paramMap.get("id");
+    this.customer_Id=id
+    var url=window.location.origin+"/customerData/"+id;
    this.httpClient.get(url).subscribe((data)=>{
     console.log(data);
     this.dataSource=data['records']
@@ -37,9 +43,7 @@ export class CustomerDetailsComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
   
-  onUpdate(customerData:any){
+  buyMaterial(customerData:any){
     console.log("******* Customer Data",customerData)
   }
-
 }
-
