@@ -1,6 +1,12 @@
 
 
-<button type="button" mdbBtn color="primary" mdbWavesEffect [routerLink]="['/buyMaterial',customer_Id]">Buy</button>
+<button style="
+width: 50%;
+background-color: #4CAF50;
+font-size: 23px;
+border: 2px solid #4CAF50;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+" type="button" mdbBtn color="primary" mdbWavesEffect [routerLink]="['/buyMaterial',customer_Id]">Buy</button>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
